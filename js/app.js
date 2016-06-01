@@ -3,21 +3,15 @@ $(document).ready(function() {
 	
 	function fizzBuzz() {
 		for (var i = 1; i <= amount; i++) {
-			// var userInput = prompt("#, Fizz, Buzz, or FizzBuzz", i);
-			var anwser = '';
-			if (i % 3 !== 0 && i % 5 !== 0) {
-				anwser = i;
+
+			function appends(anwser) {
+				$('ul').append('<li>' + anwser + '</li>');
 			}
-			else if (i % 15 === 0) {
-					anwser = 'FizzBuzz';
-			}
-			else if (i % 3 === 0) {
-					anwser = 'Fizz';
-			}
-			else if (i % 5 === 0) {
-				anwser = 'Buzz';
-			}
-			$('ul').append('<li>' + anwser + '</li>');
+
+			i % 3 !== 0 && i % 5 !== 0 ? appends(i) : false;
+			i % 15 === 0 ? appends('FizzBuzz'): false;
+			i % 3 === 0 ? appends('Fizz') : false;
+			i % 5 === 0 ? appends('Buzz') : false;
 		}	
 	}
 
